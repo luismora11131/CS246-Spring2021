@@ -6,6 +6,21 @@
 #include "Extra.h"
 using namespace std;
 using namespace ds;
+//1
+/*
+
+int i=0   1
+i<n       n+1
+i+=       n
+data[i] = "["   n
+char j = 'O'  n
+j<='9'  n+1
+j+=1  n
+data[i] += j    n
+data[i]= "]"    n
+T(n) = 8n+3
+*/
+//2
 template<typename T>
 void Insert(const T& item){
   int count =0;
