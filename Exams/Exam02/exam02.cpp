@@ -8,7 +8,6 @@ using namespace std;
 using namespace ds;
 //1
 /*
-
 int i=0   1
 i<n       n+1
 i+=       n
