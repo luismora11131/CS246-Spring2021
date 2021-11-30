@@ -7,28 +7,15 @@
 
 namespace cw1
 {
-	//Derived Class: Savings Bank Account
-	//Special Member Functions and Friends 
-	//are not inherited
 	class Savings : public Account 
 	{
 		public:
-    		//Base class default constructor used
-        	//for initialization of the Checking
-        	//constructor since no constructor is
-        	//explicitly called
 		Savings()  
 		{
-			std::cout << "It is a savings account\n";
 		}
-
-        	//Initializes with base overloaded constructor 
         	Savings(double amt) : Account(amt)
         	{
-            		std::cout << "It is a checking account\n";
         	}
-
-        	//Upcasting to call base class copy constructor
 		Savings(const Savings& obj) : Account(static_cast<const Account&>(obj)) {}
 
 		Savings& operator=(const Savings& rhs)
@@ -41,14 +28,8 @@ namespace cw1
 		}
 
 		~Savings() {} 
-
-        	//Overridding Widthdraw to prohibit overdraws
         	bool Withdraw(double amt)
         	{
-            		//Since GetBalance() is not
-            		//overridden in Savings the
-            		//compiler knows you are 
-            		//referring to Account 
             		if(amt < GetBalance()) 
             		{
    				return Account::Withdraw(amt);
@@ -56,7 +37,6 @@ namespace cw1
             		return false;          
         	}
 
-        	//Overridding ToString() method
 		std::string ToString() const 
 		{
 			std::stringstream out;
