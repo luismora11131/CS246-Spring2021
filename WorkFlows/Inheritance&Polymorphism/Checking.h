@@ -7,28 +7,16 @@
 
 namespace cw1
 {
-	//Derived Class: Checking Bank Account
-	//Special Member Functions and Friends 
-	//are not inherited
 	class Checking : public Account 
 	{
 		public:
-		//Base class default constructor used
-		//for initialization of the Checking
-		//constructor since no constructor is
-		//explicitly called
 		Checking()  
 		{
-			std::cout << "It is a checking account\n";
 		}
-
-		//Initializes with base overloaded constructor 
 		Checking(double amt) : Account(amt)
 		{
-			std::cout << "It is a checking account\n";
 		}
 
-		//Upcasting to call base class copy constructor
 		Checking(const Checking& obj) : Account(static_cast<const Account&>(obj)) {}
 
 		Checking& operator=(const Checking& rhs)
