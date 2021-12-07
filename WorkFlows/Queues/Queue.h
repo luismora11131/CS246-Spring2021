@@ -5,14 +5,13 @@
 #include <string>
 #include <sstream>
 #include "Node.h"
-#include "Interface.h"
 
 using ulong = unsigned long;
 
 namespace ds
 {
 	template<class T>
-	class Queue : public QueueInterface<T>
+	class Queue
 	{
 		private:
 		sn::Node<T>* front;
@@ -63,14 +62,16 @@ namespace ds
 
 		void Enqueue(const T& itm)
 		{
+			sn::Node<T> * t = sn::Create(itm);
+
 			if(front == NULL)
 			{
-				front = sn::Create(itm);
+				front = t;
 				back = front;
 			}
 			else
 			{
-				back->link = sn::Create(itm);
+				back->link = t;
 				back = back->link;
 			}
 		}
@@ -95,7 +96,7 @@ namespace ds
 		{
 			if(front == NULL)
 			{
-				throw "Empty Queue";
+				throw "empty queue";
 			}
 			return front->data;
 		}
@@ -128,3 +129,4 @@ namespace ds
 }
 
 #endif
+
