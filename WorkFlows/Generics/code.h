@@ -17,8 +17,8 @@ T Max(T *arr, int n){
     return max;
 }
 
-
-class Pair<K,V>{
+template <class K, class V)
+struct Pair{
     public:
     K key;
     V value;
